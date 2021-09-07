@@ -1,17 +1,44 @@
-<form>
-  <input placeholder="Login" [value]="user.username" (input)="updateUsername($event)" />
-  <input placeholder="Password" type="password" [value]="user.password" (input)="user.password = $any($event.target).value" />
+<!-- <form
+  [attr.data-username]="user.username"
+  [class.user-valid]="user.username"
+  [class.password-valid]="user.password"
+> -->
+<form
+  [attr.data-username]="user.username"
+  [ngClass]="{'user-valid': user.username, 'password-valid': user.password}"
+>
+  <input
+    placeholder="Login"
+    [value]="user.username"
+    (input)="updateUsername($event)"
+  />
+  <input
+    placeholder="Password"
+    type="password"
+    [value]="user.password"
+    (input)="user.password = $any($event.target).value"
+  />
   <div>
-    <input type="checkbox" [checked]="user.rememberMe" (click)="user.rememberMe = $any($event.target).checked" /> Remember me
+    <input
+      type="checkbox"
+      [checked]="user.rememberMe"
+      (change)="user.rememberMe = checkbox.checked"
+      #checkbox
+    />
+    Remember me
   </div>
 </form>
 
-<div>
-  Password : {{user.password}}
-</div>
+<!-- {{ user | json }} -->
 
+<!-- <ng-template [ngIf]="user.password">
+  <div>Password : {{ user.password }}</div>
+</ng-template> -->
+
+<div *ngIf="user.password">Password : {{ user.password }}</div>
 
 <!--
+
   inputEl.addEventListener('click', ($event) => {
     this.user.username = event.target.value;
     refreshUi();

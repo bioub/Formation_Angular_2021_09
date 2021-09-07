@@ -7,6 +7,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { CounterComponent } from './counter/counter.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { MultiStateButtonComponent } from './multi-state-button/multi-state-button.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { ButtonGroupComponent } from './button-group/button-group.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { MultiStateButtonComponent } from './multi-state-button/multi-state-butt
     LoginFormComponent,
     CounterComponent,
     HelloWorldComponent,
-    MultiStateButtonComponent
+    MultiStateButtonComponent,
+    CapitalizePipe,
+    ButtonGroupComponent
   ],
   imports: [
     BrowserModule
