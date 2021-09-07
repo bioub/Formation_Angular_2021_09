@@ -1,0 +1,19 @@
+<form>
+  <input placeholder="Login" [value]="user.username" (input)="updateUsername($event)" />
+  <input placeholder="Password" type="password" [value]="user.password" (input)="user.password = $any($event.target).value" />
+  <div>
+    <input type="checkbox" [checked]="user.rememberMe" (click)="user.rememberMe = $any($event.target).checked" /> Remember me
+  </div>
+</form>
+
+<div>
+  Password : {{user.password}}
+</div>
+
+
+<!--
+  inputEl.addEventListener('click', ($event) => {
+    this.user.username = event.target.value;
+    refreshUi();
+  });
+-->
