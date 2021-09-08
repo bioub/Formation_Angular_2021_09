@@ -8,11 +8,13 @@
   [ngClass]="{'user-valid': user.username, 'password-valid': user.password}"
   (submit)="sendData($event)"
 >
+  <h2>Username</h2>
   <input
     placeholder="Login"
     [value]="user.username"
     (input)="updateUsername($event)"
   />
+  <h2>Password</h2>
   <input
     placeholder="Password"
     type="password"

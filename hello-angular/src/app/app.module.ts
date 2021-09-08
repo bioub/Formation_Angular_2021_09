@@ -10,6 +10,7 @@ import { MultiStateButtonComponent } from './multi-state-button/multi-state-butt
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { ButtonGroupComponent } from './button-group/button-group.component';
 import { ClockComponent } from './clock/clock.component';
+import { ClockWithControlsComponent } from './clock-with-controls/clock-with-controls.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ClockComponent } from './clock/clock.component';
     MultiStateButtonComponent,
     CapitalizePipe,
     ButtonGroupComponent,
-    ClockComponent
+    ClockComponent,
+    ClockWithControlsComponent
   ],
   imports: [
     BrowserModule
