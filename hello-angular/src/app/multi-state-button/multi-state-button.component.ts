@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-multi-state-button',
@@ -7,12 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MultiStateButtonComponent implements OnInit {
 
-  selected = 'yellow';
-  values = ['yellow', 'orange', 'green'];
+  @Input() selected = '';
+  @Input() values = ['yellow', 'orange', 'green'];
 
-  constructor() { }
+  constructor() {
+    console.log('selected (constructor)', this.selected);
+  }
 
   ngOnInit(): void {
+    console.log('selected (ngOnInit)', this.selected);
+    if (!this.values.length) {
+      throw new Error('values is mandatory');
+    }
+
+    if (!this.selected) {
+      this.selected = this.values[0];
+    }
   }
 
   selectNext() {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hello-world',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloWorldComponent implements OnInit {
 
-  name = 'Romain';
+  @Input() name = 'Romain';
+  @Output() nameChange = new EventEmitter<string>();
 
   constructor() { }
 
@@ -16,5 +17,6 @@ export class HelloWorldComponent implements OnInit {
 
   updateName(event: Event) {
     this.name = (event.target as HTMLInputElement).value;
+    this.nameChange.emit(this.name);
   }
 }

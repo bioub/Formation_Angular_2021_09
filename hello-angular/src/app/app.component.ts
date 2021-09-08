@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hello-angular';
+  prenom = 'Jean';
+
+  colors = ['purple', 'lightcyan', 'coral'];
+  selectedcolor = 'coral';
 }

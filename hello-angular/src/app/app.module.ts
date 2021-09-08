@@ -9,6 +9,7 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { MultiStateButtonComponent } from './multi-state-button/multi-state-button.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { ButtonGroupComponent } from './button-group/button-group.component';
+import { ClockComponent } from './clock/clock.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ButtonGroupComponent } from './button-group/button-group.component';
     HelloWorldComponent,
     MultiStateButtonComponent,
     CapitalizePipe,
-    ButtonGroupComponent
+    ButtonGroupComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule

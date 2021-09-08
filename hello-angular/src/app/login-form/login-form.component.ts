@@ -22,4 +22,9 @@ export class LoginFormComponent implements OnInit {
     this.user.username = (event.target as HTMLInputElement).value;
   }
 
+  sendData(event: Event) {
+    event.preventDefault();
+    console.log(this.user);
+  }
+
 }

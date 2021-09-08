@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-button-group',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ButtonGroupComponent implements OnInit {
 
   selected = 'yellow';
-  values = ['yellow', 'orange', 'green'];
+  @Input() values = ['yellow', 'orange', 'green'];
 
   constructor() { }
 

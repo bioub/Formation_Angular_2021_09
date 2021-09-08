@@ -6,6 +6,7 @@
 <form
   [attr.data-username]="user.username"
   [ngClass]="{'user-valid': user.username, 'password-valid': user.password}"
+  (submit)="sendData($event)"
 >
   <input
     placeholder="Login"
@@ -27,6 +28,9 @@
     />
     Remember me
   </div>
+  <div>
+    <button>Send</button>
+  </div>
 </form>
 
 <!-- {{ user | json }} -->
@@ -37,10 +41,23 @@
 
 <div *ngIf="user.password">Password : {{ user.password }}</div>
 
+<!-- <ng-template [ngIf]="user.password">
+  Password : {{ user.password }}
+</ng-template> -->
+
+<ng-container *ngIf="user.password">Password : {{ user.password }}</ng-container>
+
 <!--
 
   inputEl.addEventListener('click', ($event) => {
     this.user.username = event.target.value;
     refreshUi();
   });
+
+  inputEl.addEventListener('my-event', ($event) => {
+    this.user.username = event.target.value;
+    refreshUi();
+  });
+
+  inputEl.dispatchEvent(new Event('my-event'));
 -->

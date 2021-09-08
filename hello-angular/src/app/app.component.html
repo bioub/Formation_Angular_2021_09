@@ -1,5 +1,7 @@
 <h2>Hello component</h2>
-<app-hello></app-hello>
+<app-hello [name]="prenom"></app-hello>
+<app-hello [name]="'Toto'"></app-hello>
+<app-hello name="Toto"></app-hello>
 
 <h2>Login Form component</h2>
 <app-login-form></app-login-form>
@@ -8,8 +10,19 @@
 <app-counter></app-counter>
 
 <h2>Exercice</h2>
-<app-hello-world></app-hello-world>
-<app-multi-state-button></app-multi-state-button>
+<app-hello-world [name]="prenom" (nameChange)="prenom = $event"></app-hello-world>
+
+<!--
+  Exercice :
+  ajouter un @Output selectedChange sur multi-state-button (et button-group) et affecter la valeur
+  remontée à selectedColor
+-->
+<app-multi-state-button [values]="colors" [selected]="selectedcolor"></app-multi-state-button>
+<app-multi-state-button [values]="colors"></app-multi-state-button>
+
 
 <h2>Button Group</h2>
 <app-button-group></app-button-group>
+
+<h2>Clock</h2>
+<app-clock></app-clock>
