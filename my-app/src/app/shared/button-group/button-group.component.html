@@ -1,0 +1,16 @@
+<button
+  *ngFor="let value of values"
+  (click)="select(value)"
+  [style.backgroundColor]="value"
+  [disabled]="value === selected"
+>
+  {{ value }}
+</button>
+
+<!--
+  const names = ['Jean', 'Paul'];
+
+  for (const name of names) {
+    console.log(name);
+  }
+-->
