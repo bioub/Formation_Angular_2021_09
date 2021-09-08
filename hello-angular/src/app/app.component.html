@@ -10,6 +10,7 @@
 <app-counter></app-counter>
 
 <h2>Exercice</h2>
+<app-hello-world [(name)]="prenom"></app-hello-world>
 <app-hello-world [name]="prenom" (nameChange)="prenom = $event"></app-hello-world>
 
 <!--
@@ -17,12 +18,12 @@
   ajouter un @Output selectedChange sur multi-state-button (et button-group) et affecter la valeur
   remontée à selectedColor
 -->
-<app-multi-state-button [values]="colors" [selected]="selectedcolor"></app-multi-state-button>
-<app-multi-state-button [values]="colors"></app-multi-state-button>
+<app-multi-state-button [values]="colors" [(selected)]="selectedcolor"></app-multi-state-button>
+<app-multi-state-button [values]="colors" [selected]="selectedcolor" (selectedChange)="selectedcolor = $event"></app-multi-state-button>
 
 
 <h2>Button Group</h2>
-<app-button-group></app-button-group>
+<app-button-group [values]="colors" [selected]="selectedcolor" (selectedChange)="selectedcolor = $event"></app-button-group>
 
 <h2>Clock</h2>
 <app-clock></app-clock>

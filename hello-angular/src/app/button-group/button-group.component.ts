@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button-group',
@@ -7,16 +7,26 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonGroupComponent implements OnInit {
 
-  selected = 'yellow';
+  @Input() selected = '';
   @Input() values = ['yellow', 'orange', 'green'];
+  @Output() selectedChange = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    if (!this.values.length) {
+      throw new Error('values is mandatory');
+    }
+
+    if (!this.selected) {
+      this.selected = this.values[0];
+    }
   }
 
   select(value: string) {
     this.selected = value;
+    this.selectedChange.emit(this.selected);
   }
 
 }

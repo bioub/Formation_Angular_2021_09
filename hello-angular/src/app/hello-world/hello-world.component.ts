@@ -10,6 +10,8 @@ export class HelloWorldComponent implements OnInit {
   @Input() name = 'Romain';
   @Output() nameChange = new EventEmitter<string>();
 
+  //
+
   constructor() { }
 
   ngOnInit(): void {

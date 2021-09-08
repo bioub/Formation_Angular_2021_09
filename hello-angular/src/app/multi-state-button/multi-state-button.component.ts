@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-multi-state-button',
@@ -9,6 +9,7 @@ export class MultiStateButtonComponent implements OnInit {
 
   @Input() selected = '';
   @Input() values = ['yellow', 'orange', 'green'];
+  @Output() selectedChange = new EventEmitter<string>();
 
   constructor() {
     console.log('selected (constructor)', this.selected);
@@ -28,6 +29,7 @@ export class MultiStateButtonComponent implements OnInit {
   selectNext() {
     const index = this.values.indexOf(this.selected);
     this.selected = this.values[(index + 1) % this.values.length];
+    this.selectedChange.emit(this.selected);
   }
 
 }
