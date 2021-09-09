@@ -1,27 +1,29 @@
 # MyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
+## Exercice Router
 
-## Development server
+Créer un nouveau module `users` avec un routing module associé
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Créer 3 composants dans ce module
 
-## Code scaffolding
+* `users` qui sera à la racine du module `users` (4 fichiers sans répertoire)
+* `user-add`
+* `user-details`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dans le routing module de users, créer 3 routes
 
-## Build
+* `/users` pour le composant `UsersComponent`
+* `/users/add` pour le composant `UserAddComponent`
+* `/users/:userId` pour le composant `UserDetailsComponent`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Pour ce dernier composant, les URL contiendront un paramètre, on ne fera pas un lien vers `/users/:userId` mais par exemple `/users/123` (si l'on souhaite afficher le user dont l'id est 123)
 
-## Running unit tests
+Charger le module `UsersModule` dans `AppModule` (attention à l'ordre)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Créer un lien vers `/users` dans la top-bar
 
-## Running end-to-end tests
+Dans le template de `UsersComponent` créer un liste de nom d'utilisateur avec des lien (ex: Jean Dupont, lien vers `/users/1`)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Ajouter également un lien vers la page `UserAdd`.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Utiliser routerLinkActive dans la top-bar et dans `UsersComponent`
