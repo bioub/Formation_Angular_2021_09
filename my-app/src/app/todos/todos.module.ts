@@ -21,7 +21,8 @@ import { TodosComponent } from './todos.component';
     TodosRoutingModule
   ],
   exports: [
-    TodosComponent
+    // pas besoin d'exporter si associé à une route (composant dynamique)
+    // TodosComponent
   ]
 })
 export class TodosModule { }

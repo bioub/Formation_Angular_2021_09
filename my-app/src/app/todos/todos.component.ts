@@ -9,17 +9,17 @@ import { Todo } from './shared/todo.model';
 })
 export class TodosComponent implements OnInit {
 
-  // todos: Todo[] = [{
-  //   id: 1,
-  //   title: 'Pain',
-  //   completed: false,
-  // }, {
-  //   id: 2,
-  //   title: 'Lait',
-  //   completed: true
-  // }];
+  todos: Todo[] = [{
+    id: 1,
+    title: 'Pain',
+    completed: false,
+  }, {
+    id: 2,
+    title: 'Lait',
+    completed: true
+  }];
 
-  todos: Todo[] = (new Array(2000)).fill({}).map(() => ({title: 'ABC'}));
+  // todos: Todo[] = (new Array(2000)).fill({}).map(() => ({title: 'ABC'}));
 
   constructor() {}
 
