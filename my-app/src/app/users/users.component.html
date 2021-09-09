@@ -1,9 +1,6 @@
 <ul>
-  <li>
-    <a routerLink="1" routerLinkActive="current">Jean Dupont</a>
-  </li>
-  <li>
-    <a routerLink="2" routerLinkActive="current">Eric Martin</a>
+  <li *ngFor="let user of users">
+    <a [routerLink]="[user.id]" routerLinkActive="current">{{user.name}}</a>
   </li>
 </ul>
 

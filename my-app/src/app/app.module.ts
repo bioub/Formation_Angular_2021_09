@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -22,6 +23,7 @@ import { UsersModule } from './users/users.module';
     BrowserModule, // exports CommonModule
     TodosModule,
     UsersModule,
+    HttpClientModule,
     AppRoutingModule, // à importer en dernier à cause de la route **
   ],
   providers: [],
