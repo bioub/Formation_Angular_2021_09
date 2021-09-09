@@ -5,19 +5,36 @@ import { UserAddComponent } from './user-add/user-add.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UsersComponent } from './users.component';
 
+// const routes: Routes = [
+//   {
+//     path: 'users',
+//     component: UsersComponent,
+//   },
+//   {
+//     path: 'users/add',
+//     component: UserAddComponent,
+//   },
+//   {
+//     path: 'users/:userId',
+//     component: UserDetailsComponent,
+//   }
+// ];
+
 const routes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
+    children: [
+      {
+        path: 'add',
+        component: UserAddComponent,
+      },
+      {
+        path: ':userId',
+        component: UserDetailsComponent,
+      }
+    ]
   },
-  {
-    path: 'users/add',
-    component: UserAddComponent,
-  },
-  {
-    path: 'users/:userId',
-    component: UserDetailsComponent,
-  }
 ];
 
 @NgModule({
