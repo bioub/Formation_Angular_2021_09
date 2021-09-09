@@ -18,12 +18,28 @@
   ajouter un @Output selectedChange sur multi-state-button (et button-group) et affecter la valeur
   remontée à selectedColor
 -->
+<!-- [()] BANANA IN A BOX -->
 <app-multi-state-button [values]="colors" [(selected)]="selectedcolor"></app-multi-state-button>
 <app-multi-state-button [values]="colors" [selected]="selectedcolor" (selectedChange)="selectedcolor = $event"></app-multi-state-button>
+<app-multi-state-button [values]="colors" (selectedChange)="selectedcolor = $event"></app-multi-state-button>
 
 
 <h2>Button Group</h2>
 <app-button-group [values]="colors" [selected]="selectedcolor" (selectedChange)="selectedcolor = $event"></app-button-group>
 
+<p>Couleur sélectionnée : {{ selectedcolor }}</p>
+
 <h2>Clock With Controls</h2>
 <app-clock-with-controls></app-clock-with-controls>
+
+
+
+
+<h2>Button</h2>
+
+<app-button>
+  <span class="title">Mon super title</span>
+  <b>
+    <app-multi-state-button [values]="colors" (selectedChange)="selectedcolor = $event"></app-multi-state-button>
+  </b>
+</app-button>

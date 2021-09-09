@@ -9,15 +9,17 @@ import { Todo } from './shared/todo.model';
 })
 export class TodosComponent implements OnInit {
 
-  todos: Todo[] = [{
-    id: 1,
-    title: 'Pain',
-    completed: false,
-  }, {
-    id: 2,
-    title: 'Lait',
-    completed: true
-  }];
+  // todos: Todo[] = [{
+  //   id: 1,
+  //   title: 'Pain',
+  //   completed: false,
+  // }, {
+  //   id: 2,
+  //   title: 'Lait',
+  //   completed: true
+  // }];
+
+  todos: Todo[] = (new Array(2000)).fill({}).map(() => ({title: 'ABC'}));
 
   constructor() {}
 
@@ -25,7 +27,13 @@ export class TodosComponent implements OnInit {
   }
 
   addTodo(todo: Todo) {
-    this.todos.push(todo);
+    // Ne pas utiliser en stratégie OnPush
+    // Méthode muable (modifie l'objet d'origine)
+    // this.todos.push(todo);
+
+    // A utiliser en stratégie OnPush
+    // Version Immuable (on créé un nouvel objet)
+    this.todos = [...this.todos, todo];
   }
 
   deleteTodo(todo: Todo) {

@@ -11,6 +11,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { ButtonGroupComponent } from './button-group/button-group.component';
 import { ClockComponent } from './clock/clock.component';
 import { ClockWithControlsComponent } from './clock-with-controls/clock-with-controls.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ClockWithControlsComponent } from './clock-with-controls/clock-with-con
     CapitalizePipe,
     ButtonGroupComponent,
     ClockComponent,
-    ClockWithControlsComponent
+    ClockWithControlsComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule
