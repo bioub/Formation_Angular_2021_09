@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class LoginFormTdfComponent implements OnInit {
 
   user = {
-    username: 'romain',
-    password: '123456',
-    rememberMe: true,
+    username: '',
+    password: '',
+    rememberMe: false,
   };
 
   constructor() { }
