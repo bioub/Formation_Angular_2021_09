@@ -22,4 +22,25 @@ describe('TodoItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show todo.title', () => {
+    component.todo = { title: 'Hello' };
+    fixture.detectChanges();
+    const hostEl = fixture.nativeElement as HTMLElement;
+    expect(hostEl.textContent).toContain('Hello');
+  });
+
+  it('should emit delete on click', () => {
+    component.todo = { title: 'Hello' };
+    fixture.detectChanges();
+    const hostEl = fixture.nativeElement as HTMLElement;
+
+    const spy = jasmine.createSpy();
+
+    component.delete.subscribe(spy);
+
+    hostEl.querySelector('button')?.dispatchEvent(new MouseEvent('click'));
+
+    expect(spy).toHaveBeenCalledWith(component.todo);
+  });
 });
