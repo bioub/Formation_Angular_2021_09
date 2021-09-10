@@ -27,3 +27,22 @@ Dans le template de `UsersComponent` créer un liste de nom d'utilisateur avec d
 Ajouter également un lien vers la page `UserAdd`.
 
 Utiliser routerLinkActive dans la top-bar et dans `UsersComponent`
+
+## Exercice Forms
+
+Avec l'approche de votre choix (Template Driven Form ou Reactive Form) ajoutez un formulaire dans UserAddComponent avec 3 champs :
+
+- name
+- email
+- phone
+
+Ajoutez les validateurs `required` sur `name` et `email` sur `email`.
+
+Afficher les erreurs et mettre en forme les champs invalides.
+
+Si le formulaire est valide et a été soumit, exécuter la requete POST vers le serveur en appelant la méthode `create` de `UserService`.
+
+Injecter le service `Router` dans le composant (du module `@angular/router`).
+
+Une fois la requete exécutée, appeler la méthode `navigateByUrl` (ou `navigate`) pour rediriger vers le composant `UsersComponent` (le user créé ne s'affichera pas car il n'est pas réellement créé sur le serveur).
+
