@@ -1,26 +1,14 @@
-<!-- <form (submit)="sendData()">
+<form (submit)="ngForm.valid && sendData()" [formGroup]="userFormGroup" #ngForm="ngForm" [class.submitted]="ngForm.submitted">
   <h2>Username</h2>
-  <input
-    placeholder="Login"
-    [value]="user.username"
-    (input)="updateUsername($event)"
-  />
+  <input placeholder="Login" formControlName="username" />
+  <p *ngIf="userFormGroup.get('username')?.invalid && (userFormGroup.get('username')?.touched || ngForm.submitted)">Le login est obligatoire</p>
   <h2>Password</h2>
-  <input
-    placeholder="Password"
-    type="password"
-    [value]="user.password"
-    (input)="user.password = $any($event.target).value"
-  />
+  <input placeholder="Password" type="password" formControlName="password" />
   <div>
-    <input
-      type="checkbox"
-      [checked]="user.rememberMe"
-      (change)="user.rememberMe = checkbox.checked"
-    />
+    <input type="checkbox" formControlName="rememberMe" />
     Remember me
   </div>
   <div>
     <button>Send</button>
   </div>
-</form> -->
+</form>
