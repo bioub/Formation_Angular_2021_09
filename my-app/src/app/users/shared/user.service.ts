@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 
@@ -9,6 +9,9 @@ import { User } from './user.model';
   providedIn: 'root',
 })
 export class UserService {
+
+  events = new EventEmitter<{type: string, data: User}>()
+
   constructor(protected httpClient: HttpClient) {}
 
   getAll(): Observable<User[]> {

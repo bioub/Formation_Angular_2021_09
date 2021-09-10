@@ -10,6 +10,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'users',
+    loadChildren: () => import('./users/users.module').then((m) => m.UsersModule),
+  },
+  {
     path: '**', // wildcard (intercepte toutes les url, la placer en dernier)
     component: NotFoundComponent,
   }

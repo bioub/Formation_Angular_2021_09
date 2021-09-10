@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { SharedModule } from '../shared/shared.module';
 import { UserAddComponent } from './user-add/user-add.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UsersRoutingModule } from './users-routing.module';
@@ -13,7 +13,7 @@ import { UsersComponent } from './users.component';
     UserDetailsComponent
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     UsersRoutingModule
   ],
   providers: [

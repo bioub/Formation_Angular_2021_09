@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ButtonGroupComponent } from './button-group/button-group.component';
 import { MultiStateButtonComponent } from './multi-state-button/multi-state-button.component';
@@ -17,6 +18,7 @@ import { MultiStateButtonComponent } from './multi-state-button/multi-state-butt
     CommonModule, // exporte CommonModule pour ne pas avoir à importer
     // ce module lorsqu'on importe déjà Shared (ce qui doit être le cas
     // de tous les modules)
+    ReactiveFormsModule,
     ButtonGroupComponent,
     MultiStateButtonComponent,
   ]

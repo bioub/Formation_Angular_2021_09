@@ -1,3 +1,7 @@
 :host {
   display: block;
 }
+
+input.ng-invalid.ng-touched, .submitted input.ng-invalid {
+  border: 2px solid red;
+}

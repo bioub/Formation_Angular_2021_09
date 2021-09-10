@@ -1,6 +1,6 @@
 <div class="left">
   <ul>
-    <li *ngFor="let user of users$ | async">
+    <li *ngFor="let user of users">
       <a [routerLink]="[user.id]" routerLinkActive="current">{{user.name}}</a>
     </li>
   </ul>
@@ -12,3 +12,19 @@
 <div class="right">
   <router-outlet></router-outlet>
 </div>
+
+
+<!-- <div class="left">
+  <ul>
+    <li *ngFor="let user of users$ | async">
+      <a [routerLink]="[user.id]" routerLinkActive="current">{{user.name}}</a>
+    </li>
+  </ul>
+
+  <a routerLink="add" routerLinkActive="current">Ajouter un user</a>
+
+</div>
+
+<div class="right">
+  <router-outlet></router-outlet>
+</div> -->

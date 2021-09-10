@@ -1,1 +1,41 @@
-<p>user-add works!</p>
+<form
+  [formGroup]="userFormGroup"
+  #ngForm="ngForm"
+  [class.submitted]="ngForm.submitted"
+  (submit)="ngForm.valid && sendData()"
+>
+  <div>
+    Name : <input type="text" formControlName="name" />
+    <p
+      *ngIf="
+        userFormGroup.get('name')?.errors?.required &&
+        (userFormGroup.get('name')?.touched || ngForm.submitted)
+      "
+    >
+      Le nom est obligatoire
+    </p>
+  </div>
+  <div>
+    Email : <input type="email" formControlName="email" />
+    <p
+      *ngIf="
+        userFormGroup.get('email')?.errors?.required &&
+        (userFormGroup.get('email')?.touched || ngForm.submitted)
+      "
+    >
+      L'email est obligatoire
+    </p>
+    <p
+      *ngIf="
+        userFormGroup.get('email')?.errors?.email &&
+        (userFormGroup.get('email')?.touched || ngForm.submitted)
+      "
+    >
+      Le format de l'email n'est pas bon
+    </p>
+  </div>
+  <div>Phone : <input type="tel" formControlName="phone" /></div>
+  <div>
+    <button>Create</button>
+  </div>
+</form>
