@@ -11,8 +11,8 @@ console.log(buffer.toString('utf-8'));
 fs.readFile('src.txt', (err, buffer) => {
   console.log(buffer.toString('utf-8'));
 });
-
+console.log('END')
 // ^
-// |                                 lg
-// |readFile ...                     =>
-// +------------------------------------>
+// |                                      lg
+// |readFile - lg ...                     =>
+// +----------------------------------------->

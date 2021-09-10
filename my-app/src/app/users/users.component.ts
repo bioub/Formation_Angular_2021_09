@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { User } from './shared/user.model';
 import { UserService } from './shared/user.service';
@@ -10,7 +11,7 @@ import { UserService } from './shared/user.service';
 })
 export class UsersComponent implements OnInit {
 
-  users: User[] = [];
+  users$!: Observable<User[]>;
 
   // protected userService: UserService;
 
@@ -20,9 +21,11 @@ export class UsersComponent implements OnInit {
   constructor(protected userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.getAll().subscribe((users) => {
-      this.users = users;
-    });
+    this.users$ = this.userService.getAll();
+    // this.userService.getAll().subscribe((users) => {
+    //   this.users = users;
+    //   this.loading = false;
+    // });
   }
 
 }

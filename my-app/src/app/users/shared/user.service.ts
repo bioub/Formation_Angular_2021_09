@@ -36,4 +36,8 @@ export class UserService {
       map((users: User[]) => users.map((u) => u.username))
     );
   }
+
+  create(user: User) {
+    return this.httpClient.post('http://jsonplaceholder.typicode.com/users', user);
+  }
 }

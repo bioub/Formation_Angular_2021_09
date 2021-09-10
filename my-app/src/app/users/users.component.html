@@ -1,6 +1,6 @@
 <div class="left">
   <ul>
-    <li *ngFor="let user of users">
+    <li *ngFor="let user of users$ | async">
       <a [routerLink]="[user.id]" routerLinkActive="current">{{user.name}}</a>
     </li>
   </ul>

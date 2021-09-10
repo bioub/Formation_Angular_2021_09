@@ -22,3 +22,16 @@ fs.promises.readFile('src.txt')
   .then((buffer) => fs.promises.writeFile('copy.txt', buffer))
   .then(() => console.log('Copy Done'))
   .catch((err) => console.log(err));
+
+// ES2017 async / await
+async function copy() {
+  try {
+    const buffer = await fs.promises.readFile('src.txt');
+    await fs.promises.writeFile('copy.txt', buffer);
+    console.log('Copy Done');
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+copy();
