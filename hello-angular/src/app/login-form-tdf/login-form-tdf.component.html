@@ -1,0 +1,13 @@
+<form (submit)="sendData()">
+  <h2>Username</h2>
+  <input placeholder="Login" [(ngModel)]="user.username" />
+  <h2>Password</h2>
+  <input placeholder="Password" type="password" [(ngModel)]="user.password" />
+  <div>
+    <input type="checkbox" [(ngModel)]="user.rememberMe" />
+    Remember me
+  </div>
+  <div>
+    <button>Send</button>
+  </div>
+</form>

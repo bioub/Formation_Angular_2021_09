@@ -1,0 +1,26 @@
+<form (submit)="sendData()">
+  <h2>Username</h2>
+  <input
+    placeholder="Login"
+    [value]="user.username"
+    (input)="updateUsername($event)"
+  />
+  <h2>Password</h2>
+  <input
+    placeholder="Password"
+    type="password"
+    [value]="user.password"
+    (input)="user.password = $any($event.target).value"
+  />
+  <div>
+    <input
+      type="checkbox"
+      [checked]="user.rememberMe"
+      (change)="user.rememberMe = checkbox.checked"
+    />
+    Remember me
+  </div>
+  <div>
+    <button>Send</button>
+  </div>
+</form>
